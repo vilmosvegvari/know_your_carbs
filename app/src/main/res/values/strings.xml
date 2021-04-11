@@ -14,4 +14,10 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_recipes_fragment">Hello Recipes Fragment</string>
+    <string name="switch_to_favourites">Switch to Favourites</string>
+    <string name="switch_to_details">Switch to details</string>
+    <string name="hello_favourites">Hello favourites</string>
+    <string name="hello_details">Hello details</string>
+    <string name="hello_about">Hello about</string>
 </resources>

@@ -5,10 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.commit
 import androidx.lifecycle.ViewModelProvider
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import hu.bme.aut.knowyourcarbs.R
+import hu.bme.aut.knowyourcarbs.details.DetailFragment
+import hu.bme.aut.knowyourcarbs.favourites.FavouritesFragment
+import kotlinx.android.synthetic.main.fragment_recipes.*
 
 class RecipesFragment : Fragment() {
     companion object {
@@ -26,9 +28,26 @@ class RecipesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view1 ->
-            Snackbar.make(view1, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+
+        fab.setOnClickListener{
+            parentFragmentManager.commit {
+                addToBackStack("recipes")
+                replace(R.id.contentFrame,DetailFragment.newInstance())
+            }
+        }
+
+        favSwitchButton.setOnClickListener{
+            parentFragmentManager.commit {
+                addToBackStack("recipes")
+                replace(R.id.contentFrame,FavouritesFragment.newInstance())
+            }
+        }
+
+        detailSwitchButton.setOnClickListener{
+            parentFragmentManager.commit {
+                addToBackStack("recipes")
+                replace(R.id.contentFrame,DetailFragment.newInstance())
+            }
         }
     }
 
