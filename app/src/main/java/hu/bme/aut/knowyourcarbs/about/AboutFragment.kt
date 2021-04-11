@@ -1,4 +1,4 @@
-package hu.bme.aut.knowyourcarbs.details
+package hu.bme.aut.knowyourcarbs.about
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -8,24 +8,24 @@ import android.view.View
 import android.view.ViewGroup
 import hu.bme.aut.knowyourcarbs.R
 
-class DetailFragment : Fragment() {
+class AboutFragment : Fragment() {
 
     companion object {
-        fun newInstance() = DetailFragment()
+        fun newInstance() = AboutFragment()
     }
 
-    private lateinit var viewModel: DetailViewModel
+    private lateinit var viewModel: AboutViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_detail, container, false)
+        return inflater.inflate(R.layout.fragment_about, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(AboutViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
