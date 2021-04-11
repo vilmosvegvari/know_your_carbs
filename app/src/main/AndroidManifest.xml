@@ -10,10 +10,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KnowYourCarbs"  >
-        <activity
-            android:name=".recipes.RecipesActivity"
-            android:label="@string/title_activity_recipes"
-            android:theme="@style/Theme.KnowYourCarbs.NoActionBar"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
