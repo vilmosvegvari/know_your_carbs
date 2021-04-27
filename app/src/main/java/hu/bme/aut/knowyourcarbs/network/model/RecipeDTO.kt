@@ -45,7 +45,7 @@ data class RecipeDTO (
     val summary: kotlin.String? = null,
     /* number of servings */
     @Json(name = "yield")
-    val yield: kotlin.String? = null,
+    val `yield`: kotlin.String? = null,
     /* total time for preparation */
     @Json(name = "ttime")
     val ttime: kotlin.String? = null,

@@ -31,7 +31,7 @@ data class RecipeResponseDTO (
     val uri: kotlin.String? = null,
     /* ingredients (array of strings) */
     @Json(name = "yield")
-    val yield: kotlin.Int? = null,
+    val `yield`: kotlin.Int? = null,
     /* Total energy, kcal */
     @Json(name = "calories")
     val calories: java.math.BigDecimal? = null,
