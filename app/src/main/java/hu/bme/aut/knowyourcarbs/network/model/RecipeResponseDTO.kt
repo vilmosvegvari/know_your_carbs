@@ -11,8 +11,6 @@
 */
 package hu.bme.aut.jokes.data.network.model
 
-import hu.bme.aut.jokes.data.network.model.NutrientInfo
-
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
@@ -27,26 +25,26 @@ import com.squareup.moshi.JsonClass
  * @param healthLabels 
  */
 @JsonClass(generateAdapter = true)
-data class RecipeResponse (
+data class RecipeResponseDTO (
     /* Ontology identifier */
     @Json(name = "uri")
     val uri: kotlin.String? = null,
     /* ingredients (array of strings) */
     @Json(name = "yield")
-    val yield: kotlin.Int? = null,
+    val yieldData: kotlin.Int? = null,
     /* Total energy, kcal */
     @Json(name = "calories")
     val calories: java.math.BigDecimal? = null,
     /* Total nutrients */
     @Json(name = "totalNutrients")
-    val totalNutrients: NutrientInfo? = null,
+    val totalNutrients: NutrientInfoDTO? = null,
     /* % daily value */
     @Json(name = "totalDaily")
-    val totalDaily: NutrientInfo? = null,
+    val totalDaily: NutrientInfoDTO? = null,
     @Json(name = "dietLabels")
-    val dietLabels: RecipeResponse.DietLabels? = null,
+    val dietLabels: RecipeResponseDTO.DietLabels? = null,
     @Json(name = "healthLabels")
-    val healthLabels: RecipeResponse.HealthLabels? = null
+    val healthLabels: RecipeResponseDTO.HealthLabels? = null
 ) {
 
     /**

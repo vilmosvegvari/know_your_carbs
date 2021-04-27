@@ -2,10 +2,9 @@ package hu.bme.aut.jokes.data.network.api
 
 import retrofit2.http.*
 import retrofit2.Response
-import okhttp3.RequestBody
 
-import hu.bme.aut.jokes.data.network.model.Recipe
-import hu.bme.aut.jokes.data.network.model.RecipeResponse
+import hu.bme.aut.jokes.data.network.model.RecipeDTO
+import hu.bme.aut.jokes.data.network.model.RecipeResponseDTO
 
 interface NutritionDetailsApi {
     /**
@@ -21,9 +20,9 @@ interface NutritionDetailsApi {
      * @param appKey Application Key that you request from the service. Your 3scale application key. 
      * @param body  
      * @param force Forces the re-evaluation of the recipe. The value, if any, is ignored. (optional)
-    * @return [RecipeResponse]
+    * @return [RecipeResponseDTO]
      */
     @POST("nutrition-details")
-    suspend fun handleNutritionInfoPost(@Query("app_id") appId: kotlin.String, @Query("app_key") appKey: kotlin.String, @Body body: Recipe, @Query("force") force: kotlin.String? = null): Response<RecipeResponse>
+    suspend fun handleNutritionInfoPost(@Query("app_id") appId: kotlin.String, @Query("app_key") appKey: kotlin.String, @Body body: RecipeDTO, @Query("force") force: kotlin.String? = null): Response<RecipeResponseDTO>
 
 }

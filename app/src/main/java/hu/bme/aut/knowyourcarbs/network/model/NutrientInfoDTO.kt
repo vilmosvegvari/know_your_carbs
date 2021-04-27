@@ -11,8 +11,6 @@
 */
 package hu.bme.aut.jokes.data.network.model
 
-import hu.bme.aut.jokes.data.network.model.NutrientChild
-
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
@@ -21,9 +19,9 @@ import com.squareup.moshi.JsonClass
  * @param uri Ontology identifier
  */
 @JsonClass(generateAdapter = true)
-data class NutrientInfo (
+data class NutrientInfoDTO (
     /* Ontology identifier */
     @Json(name = "uri")
-    val uri: NutrientChild? = null
+    val uri: NutrientChildDTO? = null
 )
 
