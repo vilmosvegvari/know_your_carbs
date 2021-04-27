@@ -30,7 +30,7 @@ import com.squareup.moshi.JsonClass
  * @param dishtype type of dish
  */
 @JsonClass(generateAdapter = true)
-data class Recipe (
+data class RecipeDTO (
     /* common name of the recipe */
     @Json(name = "title")
     val title: kotlin.String,

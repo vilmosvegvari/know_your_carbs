@@ -22,7 +22,7 @@ import com.squareup.moshi.JsonClass
  * @param unit Units
  */
 @JsonClass(generateAdapter = true)
-data class NutrientChild (
+data class NutrientChildDTO (
     /* Display label */
     @Json(name = "label")
     val label: kotlin.String? = null,
