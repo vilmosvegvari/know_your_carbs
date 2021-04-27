@@ -1,0 +1,183 @@
+swagger: '2.0'
+info:
+  description: Made for app KnowYourCarbs for an API Description. 
+  version: '1.0'
+  title: Edemam Nutrition Analysis - KnowYourCarbs
+  termsOfService: 'urn:tos'
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0'
+host: 'api.edamam.com'
+basePath: /api
+tags:
+  - name: Nutrition details
+    description: Here you can get nutrition analysis about your recipe.
+paths:
+  /nutrition-details:
+    post:
+      tags:
+        - Nutrition details
+      summary: Get nutrition info
+      operationId: handleNutritionInfoPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: app_id
+          in: query
+          description: Application Id that you request from the service. Your 3scale application ID.
+          required: true
+          type: string
+        - name: app_key
+          in: query
+          description: Application Key that you request from the service. Your 3scale application key.
+          required: true
+          type: string
+        - name: force
+          in: query
+          description: Forces the re-evaluation of the recipe. The value, if any, is ignored.
+          required: false
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Recipe'
+      responses:
+        '200':
+          description: Recipe object containing number of servings (yield), total calories for the recipe (calories), nutrient content by nutrient type (totalNutrients, totalDaily), diet and health classification (dietLabels, healthLabels)
+          schema:
+            $ref: '#/definitions/RecipeResponse'
+        '404':
+          description: The specified URL was not found or couldn’t be retrieved
+        '422':
+          description: Couldn’t parse the recipe or extract the nutritional info
+        '555':
+          description: Recipe with insufficient quality to process correctly
+      deprecated: false
+
+definitions:
+  Recipe:
+    title: Recipe
+    type: object
+    required:
+      - title
+      - ingr
+    properties:
+      title:
+        type: string
+        example: Hotdog
+        description: common name of the recipe
+      ingr:
+        type: array
+        example: [4 teaspoons salt, 7 cloves garlic minced]
+        items:
+          type: string
+        description: ingredients (array of strings)
+      url:
+        type: string
+        example: google.com
+        description: url of the recipe’s location
+      summary:
+        type: string
+        example: fast hotdog!
+        description:  a short description of the recipe
+      yield:
+        type: string
+        example: About 15 servings
+        description:  number of servings
+      ttime:
+        type: string
+        example: 3 hours
+        description:  total time for preparation
+      img:
+        type: string
+        example: https://pngimg.com/uploads/hot_dog/hot_dog_PNG10217.png
+        description:  image link (absolute)
+      prep:
+        type: string
+        example: "1. Have your butcher bone and butterfly the ham and score the fat in a diamond pattern. ..."
+        description:  preparation instructions (free text)
+      cuisine:
+        type: string
+        example: Italian
+        description:  type of cuisine
+      mealtype:  
+        type: string
+        example: fast-food
+        description:  type of meal
+      dishtype:
+        type: string
+        example: delicous
+        description:  type of dish
+  RecipeResponse:
+    title: RecipeResponse
+    type: object
+    properties:
+      uri:
+        type: string
+        example: Hotdog
+        description: Ontology identifier
+      yield:
+        type: integer
+        example: 3
+        description: ingredients (array of strings)
+      calories:
+        type: number
+        example: 31
+        description: Total energy, kcal
+      totalNutrients:
+        type: object
+        allOf:
+          - $ref: '#/definitions/NutrientInfo'
+        description:  Total nutrients
+      totalDaily:
+        type: object
+        allOf:
+          - $ref: '#/definitions/NutrientInfo'
+        description:  "% daily value"
+      dietLabels:
+        type: string
+        enum:
+          - balanced
+          - high-protein 
+          - high-fiber
+          - low-fat
+          - low-carb
+          - low-sodium
+      healthLabels:
+        type: string
+        enum:
+          - vegan 
+          - vegetarian 
+          - dairy-free
+          - low-sugar 
+          - low-fat-abs 
+          - sugar-conscious
+          - fat free 
+          - gluten free 
+          - wheat free
+  NutrientInfo:
+    properties:
+      uri:
+        type: object
+        allOf:
+          - $ref: '#/definitions/NutrientChild' 
+        description:  Ontology identifier
+      
+  NutrientChild:
+    properties:
+      label:
+        type: string
+        example: Cholesterol
+        description:  Display label
+      quantity:
+        type: number
+        example: 6153.39888
+        description: Quantity of specified units
+      unit:
+        type: string
+        example: mg
+        description:  Units
