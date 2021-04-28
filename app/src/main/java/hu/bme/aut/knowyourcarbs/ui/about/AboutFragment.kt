@@ -1,4 +1,4 @@
-package hu.bme.aut.knowyourcarbs.favourites
+package hu.bme.aut.knowyourcarbs.ui.about
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -8,24 +8,24 @@ import android.view.View
 import android.view.ViewGroup
 import hu.bme.aut.knowyourcarbs.R
 
-class FavouritesFragment : Fragment() {
+class AboutFragment : Fragment() {
 
     companion object {
-        fun newInstance() = FavouritesFragment()
+        fun newInstance() = AboutFragment()
     }
 
-    private lateinit var viewModel: FavouritesViewModel
+    private lateinit var viewModel: AboutViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_favourites, container, false)
+        return inflater.inflate(R.layout.fragment_about, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(FavouritesViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(AboutViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
