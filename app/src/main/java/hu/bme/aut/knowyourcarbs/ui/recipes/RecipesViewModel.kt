@@ -1,4 +1,4 @@
-package hu.bme.aut.knowyourcarbs.recipes
+package hu.bme.aut.knowyourcarbs.ui.recipes
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

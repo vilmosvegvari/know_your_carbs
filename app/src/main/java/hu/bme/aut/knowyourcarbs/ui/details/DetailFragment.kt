@@ -1,4 +1,4 @@
-package hu.bme.aut.knowyourcarbs.details
+package hu.bme.aut.knowyourcarbs.ui.details
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package hu.bme.aut.knowyourcarbs.recipes
+package hu.bme.aut.knowyourcarbs.ui.recipes
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.commit
 import androidx.lifecycle.ViewModelProvider
 import hu.bme.aut.knowyourcarbs.R
-import hu.bme.aut.knowyourcarbs.details.DetailFragment
-import hu.bme.aut.knowyourcarbs.favourites.FavouritesFragment
+import hu.bme.aut.knowyourcarbs.ui.details.DetailFragment
+import hu.bme.aut.knowyourcarbs.ui.favourites.FavouritesFragment
 import kotlinx.android.synthetic.main.fragment_recipes.*
 
 class RecipesFragment : Fragment() {
@@ -32,21 +32,21 @@ class RecipesFragment : Fragment() {
         fab.setOnClickListener{
             parentFragmentManager.commit {
                 addToBackStack("recipes")
-                replace(R.id.contentFrame,DetailFragment.newInstance())
+                replace(R.id.contentFrame, DetailFragment.newInstance())
             }
         }
 
         favSwitchButton.setOnClickListener{
             parentFragmentManager.commit {
                 addToBackStack("recipes")
-                replace(R.id.contentFrame,FavouritesFragment.newInstance())
+                replace(R.id.contentFrame, FavouritesFragment.newInstance())
             }
         }
 
         detailSwitchButton.setOnClickListener{
             parentFragmentManager.commit {
                 addToBackStack("recipes")
-                replace(R.id.contentFrame,DetailFragment.newInstance())
+                replace(R.id.contentFrame, DetailFragment.newInstance())
             }
         }
     }

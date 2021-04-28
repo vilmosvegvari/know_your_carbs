@@ -9,7 +9,7 @@
 * https://openapi-generator.tech
 * Do not edit the class manually.
 */
-package hu.bme.aut.jokes.data.network.model
+package hu.bme.aut.knowyourcarbs.network.model
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
