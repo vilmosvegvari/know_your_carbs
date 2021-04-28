@@ -1,4 +1,4 @@
-package hu.bme.aut.jokes.data.network.api
+package hu.bme.aut.knowyourcarbs.network.api
 
 import retrofit2.http.*
 import retrofit2.Response
