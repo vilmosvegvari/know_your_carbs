@@ -17,7 +17,7 @@ abstract class DbModule {
 
         @Provides
         @Singleton
-        fun provideJokesDatabase(context: Context): AppDatabase {
+        fun provideRecipeDatabase(context: Context): AppDatabase {
             return Room.databaseBuilder(context, AppDatabase::class.java, DB_NAME)
                 .fallbackToDestructiveMigration()
                 .build()
@@ -25,6 +25,6 @@ abstract class DbModule {
 
         @Provides
         @Singleton
-        fun provideJokeDao(appDatabase: AppDatabase) = appDatabase.recipeDao()
+        fun provideRecipeDAO(appDatabase: AppDatabase) = appDatabase.recipeDAO()
     }
 }
