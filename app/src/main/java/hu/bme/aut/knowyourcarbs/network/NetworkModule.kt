@@ -4,9 +4,6 @@ import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import hu.bme.aut.knowyourcarbs.CarbsApplication
-import hu.bme.aut.knowyourcarbs.MainActivity
-import hu.bme.aut.knowyourcarbs.SingletonComponent
 import dagger.hilt.android.components.ActivityComponent
 import hu.bme.aut.knowyourcarbs.network.api.NutritionDetailsApi
 import okhttp3.OkHttpClient
