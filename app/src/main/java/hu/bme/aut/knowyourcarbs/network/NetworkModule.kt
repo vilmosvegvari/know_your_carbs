@@ -3,6 +3,11 @@ package hu.bme.aut.knowyourcarbs.network
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import hu.bme.aut.knowyourcarbs.CarbsApplication
+import hu.bme.aut.knowyourcarbs.MainActivity
+import hu.bme.aut.knowyourcarbs.SingletonComponent
+import dagger.hilt.android.components.ActivityComponent
 import hu.bme.aut.knowyourcarbs.network.api.NutritionDetailsApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -12,6 +17,7 @@ import retrofit2.create
 import javax.inject.Singleton
 
 @Module
+@InstallIn(ActivityComponent::class)
 abstract class NetworkModule {
 
     companion object {

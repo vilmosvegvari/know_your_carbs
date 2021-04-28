@@ -3,8 +3,8 @@ package hu.bme.aut.knowyourcarbs.network.api
 import retrofit2.http.*
 import retrofit2.Response
 
-import hu.bme.aut.jokes.data.network.model.RecipeDTO
-import hu.bme.aut.jokes.data.network.model.RecipeResponseDTO
+import hu.bme.aut.knowyourcarbs.network.model.RecipeDTO
+import hu.bme.aut.knowyourcarbs.network.model.RecipeResponseDTO
 
 interface NutritionDetailsApi {
     /**

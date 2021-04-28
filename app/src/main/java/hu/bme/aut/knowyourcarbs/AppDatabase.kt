@@ -7,7 +7,7 @@ import hu.bme.aut.knowyourcarbs.data.Recipe
 import hu.bme.aut.knowyourcarbs.data.RecipeDAO
 import hu.bme.aut.knowyourcarbs.util.Converters
 
-@Database(entities = [Recipe::class], version = 2)
+@Database(entities = [Recipe::class], version = 2, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun recipeDao(): RecipeDAO
