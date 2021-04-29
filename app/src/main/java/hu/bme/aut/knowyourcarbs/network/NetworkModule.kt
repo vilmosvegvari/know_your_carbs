@@ -46,7 +46,7 @@ abstract class NetworkModule {
 
         @Provides
         @Singleton
-        fun provideRealJokesApi(retrofit: Retrofit): NutritionDetailsApi  = retrofit.create()
+        fun provideRealRecipeApi(retrofit: Retrofit): NutritionDetailsApi  = retrofit.create()
 
     }
 }
