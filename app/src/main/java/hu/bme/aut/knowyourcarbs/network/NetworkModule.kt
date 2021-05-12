@@ -5,6 +5,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
+import dagger.hilt.components.SingletonComponent
 import hu.bme.aut.knowyourcarbs.network.api.NutritionDetailsApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -14,11 +15,11 @@ import retrofit2.create
 import javax.inject.Singleton
 
 @Module
-@InstallIn(ActivityComponent::class)
+@InstallIn(SingletonComponent::class)
 abstract class NetworkModule {
 
     companion object {
-        private const val BASE_URL = "https://api.edamam.com/api"
+        private const val BASE_URL = "https://api.edamam.com/api/"
 
         @Provides
         @Singleton

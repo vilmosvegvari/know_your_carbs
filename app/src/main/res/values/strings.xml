@@ -12,7 +12,6 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_recipes_fragment">Hello Recipes Fragment</string>
     <string name="switch_to_favourites">Switch to Favourites</string>
@@ -20,4 +19,9 @@
     <string name="hello_favourites">Hello favourites</string>
     <string name="hello_details">Hello details</string>
     <string name="hello_about">Hello about</string>
+    <string name="kedvenc_btn">Kedvencekre Váltás</string>
+    <string name="sszes_receptre_v_lt_s">Összes receptre váltás</string>
+    <string name="hozz_val_k_sz_ma">Hozzávalók száma:</string>
+    <string name="Edit">Szerkesztés</string>
+    <string name="delete">Törlés</string>
 </resources>
