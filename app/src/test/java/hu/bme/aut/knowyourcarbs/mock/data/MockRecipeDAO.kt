@@ -27,6 +27,11 @@ class MockRecipeDAO : RecipeDAO {
         return recipes.findLast { recipe -> recipe.title.contains(title)  }!!
     }
 
+    override fun update(recipe: Recipe) {
+        val index = recipes.indexOf(recipe)
+        recipes.set(index, recipe)
+    }
+
     override fun insertAll(vararg recipesIncoming: Recipe) {
         recipesIncoming.forEach {
             recipes.add(it)
