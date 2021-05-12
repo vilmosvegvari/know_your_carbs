@@ -63,6 +63,6 @@ data class RecipeDTO (
     val mealtype: kotlin.String? = null,
     /* type of dish */
     @Json(name = "dishtype")
-    val dishtype: kotlin.String? = null
+    val dishtype: kotlin.String? = null,
 )
 

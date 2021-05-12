@@ -1,9 +1,6 @@
 package hu.bme.aut.knowyourcarbs.data
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface  RecipeDAO {
@@ -16,7 +13,10 @@ interface  RecipeDAO {
     @Query("SELECT * FROM recipe WHERE title LIKE :title LIMIT 1")
     fun findByTitle(title: String): Recipe
 
-    @Insert
+    @Update
+    fun update(recipe:Recipe)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(vararg recipes: Recipe)
 
     @Delete
