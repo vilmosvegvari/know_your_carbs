@@ -13,6 +13,7 @@ package hu.bme.aut.knowyourcarbs.network.model
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import java.math.BigDecimal
 
 /**
  * 
@@ -34,17 +35,17 @@ data class RecipeResponseDTO (
     val yieldData: kotlin.Int? = null,
     /* Total energy, kcal */
     @Json(name = "calories")
-    val calories: java.math.BigDecimal? = null,
+    val calories: Int? = null,
     /* Total nutrients */
-    @Json(name = "totalNutrients")
+/*    @Json(name = "totalNutrients")
     val totalNutrients: NutrientInfoDTO? = null,
-    /* % daily value */
+    *//* % daily value *//*
     @Json(name = "totalDaily")
     val totalDaily: NutrientInfoDTO? = null,
     @Json(name = "dietLabels")
     val dietLabels: RecipeResponseDTO.DietLabels? = null,
     @Json(name = "healthLabels")
-    val healthLabels: RecipeResponseDTO.HealthLabels? = null
+    val healthLabels: RecipeResponseDTO.HealthLabels? = null*/
 ) {
 
     /**
