@@ -14,6 +14,11 @@ class MockApi : NutritionDetailsApi {
         body: RecipeDTO,
         force: kotlin.String?
     ): Response<RecipeResponseDTO> {
-        TODO("Not yet implemented")
+        return Response.success(RecipeResponseDTO(
+            uri = "http://www.edamam.com/ontologies/edamam.owl#recipe_94dbd867e9094d4f9c08bb7649f24828",
+            yieldData = 2,
+            calories = 246,
+        ))
+
     }
 }
